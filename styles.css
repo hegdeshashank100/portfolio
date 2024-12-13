@@ -270,6 +270,39 @@ footer {
   scrollbar-width: thin;
   scrollbar-color: #007bff #1e1e1e;
 }
+/* Responsive header layout for smaller screens */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0; /* Reduce padding on small devices */
+  }
+
+  nav {
+    flex-direction: column; /* Stack navigation links */
+    align-items: center; /* Center align the nav links */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack list items */
+    align-items: center; /* Center align the list items */
+    margin-top: 10px;
+  }
+
+  nav ul li {
+    margin-left: 0; /* Remove left margin when stacking */
+    margin-bottom: 10px; /* Add space between list items */
+  }
+
+  nav a {
+    font-size: 16px; /* Adjust font size */
+    padding: 8px 0; /* Adjust padding */
+  }
+
+  /* Center the logo text properly on mobile */
+  header .logo {
+    font-size: 20px;
+    margin-bottom: 15px; /* Provide space from nav */
+  }
+}
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
