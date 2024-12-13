@@ -20,6 +20,7 @@ a {
     text-decoration: none;
 }
 
+/* Header */
 header {
     position: absolute;
     top: 0;
@@ -29,6 +30,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -173,4 +175,80 @@ footer {
     text-align: center;
     font-size: 14px;
     color: #aaa;
+}
+
+/* Responsive Styles for small screens */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 10px; /* Reduce header padding */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo {
+        font-size: 20px; /* Reduce logo size */
+        margin-bottom: 10px;
+    }
+
+    header ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    header ul li {
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 10px; /* Add space between items */
+    }
+
+    header ul li a {
+        font-size: 14px; /* Adjust font size */
+        padding: 8px 10px; /* Adjust padding */
+    }
+
+    /* Profile Section */
+    .profile-container {
+        flex-direction: column;
+        width: 90%; /* Make the profile container more narrow */
+        padding: 20px;
+    }
+
+    .profile-image {
+        width: 60%; /* Reduce the profile image size */
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+
+    .profile-info {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .profile-info h1 {
+        font-size: 28px; /* Reduce header font size */
+    }
+
+    .profile-info .tagline {
+        font-size: 18px; /* Reduce tagline font size */
+    }
+
+    .profile-info .bio {
+        font-size: 14px; /* Reduce bio font size */
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .social-link {
+        font-size: 12px; /* Adjust social link font size */
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    /* Footer */
+    footer {
+        font-size: 12px; /* Reduce footer font size on small screens */
+    }
 }
