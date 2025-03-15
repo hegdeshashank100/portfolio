@@ -150,18 +150,26 @@
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Smooth scrolling for navigation links
+            // Smooth scrolling and external link handling for navigation links
             const navLinks = document.querySelectorAll('nav a');
             
             navLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    const targetHref = this.getAttribute('href');
+                    
+                    // Check if the href is an external link (contains '.html' or starts with 'http')
+                    if (targetHref.includes('.html') || targetHref.startsWith('http')) {
+                        window.location.href = targetHref; // Redirect to external page
+                    } else {
+                        // Handle internal smooth scrolling
+                        const targetSection = document.querySelector(targetHref);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
                 });
             });
 
