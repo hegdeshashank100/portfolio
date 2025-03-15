@@ -9,87 +9,74 @@ body {
     background-color: #121212;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-a {
-    text-decoration: none;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Header */
-header {
-    position: absolute;
-    top: 0;
-    width: 100%;
+.navbar {
     background-color: #1a1a1a;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
 }
 
-header .logo {
+.navbar-brand {
+    color: #007bff !important;
     font-size: 24px;
     font-weight: bold;
-    color: #007bff;
 }
 
-header ul {
-    display: flex;
-    list-style: none;
-}
-
-header ul li {
-    margin-left: 20px;
-}
-
-header ul li a {
-    color: #fff;
+.nav-link {
+    color: #fff !important;
     font-size: 16px;
-    padding: 10px;
+    padding: 10px !important;
     transition: color 0.3s;
 }
 
-header ul li a:hover {
-    color: #007bff;
+.nav-link:hover {
+    color: #007bff !important;
 }
 
 /* Profile Section */
 .profile-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    animation: fadeIn 1s ease-in-out;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #121212, #1f1f1f);
 }
 
 .profile-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
     max-width: 1200px;
     border-radius: 15px;
     background-color: #1f1f1f;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+    transition: all 0.8s ease-out;
+}
+
+.profile-container.visible {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
 }
 
 .profile-image {
     width: 40%;
     padding-right: 30px;
+    position: relative;
 }
 
 .profile-image img {
     width: 100%;
     border-radius: 50%;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    animation: imageZoom 1s ease-in-out;
+    transition: transform 0.5s ease;
+}
+
+.profile-image:hover img {
+    transform: rotate(360deg) scale(1.1);
 }
 
 .profile-info {
@@ -101,14 +88,13 @@ header ul li a:hover {
     font-size: 36px;
     color: #fff;
     margin-bottom: 10px;
-    animation: fadeInUp 1s ease-in-out;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 .profile-info .tagline {
     font-size: 20px;
     color: #bbb;
     margin-bottom: 20px;
-    animation: fadeInUp 1s ease-in-out 0.5s;
 }
 
 .profile-info .bio {
@@ -116,7 +102,6 @@ header ul li a:hover {
     color: #ccc;
     line-height: 1.6;
     margin-bottom: 20px;
-    animation: fadeInUp 1s ease-in-out 1s;
 }
 
 .social-links {
@@ -130,93 +115,76 @@ header ul li a:hover {
     border-radius: 25px;
     color: #fff;
     font-size: 14px;
-    transition: background-color 0.3s;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.social-link:hover {
+.animate-on-hover:hover {
     background-color: #0056b3;
+    transform: translateY(-5px) rotate(10deg);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.7);
 }
 
-/* Keyframe Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+/* Crazy Custom Animations */
+@keyframes crazySpin {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.2); }
+    50% { transform: rotate(180deg) scale(0.9); }
+    75% { transform: rotate(270deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 123, 255, 1); }
+    100% { box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); }
 }
 
-@keyframes imageZoom {
-    0% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-    }
+/* Apply crazy animations on hover */
+.profile-info h1:hover {
+    animation: crazySpin 1s infinite linear;
+}
+
+.profile-container:hover {
+    animation: pulseGlow 1.5s infinite;
 }
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-    color: #aaa;
+    background-color: #1a1a1a;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Styles for small screens */
+/* Scroll Animation */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    /* Header */
-    header {
-        padding: 10px; /* Reduce header padding */
-        flex-direction: column;
-        align-items: center;
+    .navbar-brand {
+        font-size: 20px;
     }
 
-    header .logo {
-        font-size: 20px; /* Reduce logo size */
-        margin-bottom: 10px;
+    .nav-link {
+        font-size: 14px;
     }
 
-    header ul {
-        flex-direction: column; /* Stack nav items vertically */
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    header ul li {
-        margin-left: 0; /* Remove left margin */
-        margin-bottom: 10px; /* Add space between items */
-    }
-
-    header ul li a {
-        font-size: 14px; /* Adjust font size */
-        padding: 8px 10px; /* Adjust padding */
-    }
-
-    /* Profile Section */
     .profile-container {
         flex-direction: column;
-        width: 90%; /* Make the profile container more narrow */
+        width: 90%;
         padding: 20px;
     }
 
     .profile-image {
-        width: 60%; /* Reduce the profile image size */
-        margin-bottom: 20px; /* Add space between image and text */
+        width: 60%;
+        margin-bottom: 20px;
+        padding-right: 0;
     }
 
     .profile-info {
@@ -226,15 +194,15 @@ footer {
     }
 
     .profile-info h1 {
-        font-size: 28px; /* Reduce header font size */
+        font-size: 28px;
     }
 
     .profile-info .tagline {
-        font-size: 18px; /* Reduce tagline font size */
+        font-size: 18px;
     }
 
     .profile-info .bio {
-        font-size: 14px; /* Reduce bio font size */
+        font-size: 14px;
     }
 
     .social-links {
@@ -243,12 +211,11 @@ footer {
     }
 
     .social-link {
-        font-size: 12px; /* Adjust social link font size */
-        padding: 8px 12px; /* Adjust padding */
+        font-size: 12px;
+        padding: 8px 12px;
     }
 
-    /* Footer */
     footer {
-        font-size: 12px; /* Reduce footer font size on small screens */
+        font-size: 12px;
     }
 }
