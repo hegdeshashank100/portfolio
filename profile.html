@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Profile - Shashank Hegde</title>
-
-    <!-- Fonts & Styles -->
+    <title>Shashank Vinay Hegde - Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
@@ -14,44 +12,41 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <div class="container">
-                <a href="#" class="navbar-brand">PROFILE</a>
+            <div class="container nav-container">
+                <a href="index.html" class="navbar-brand">Profile</a>
                 <button class="menu-toggle">☰</button>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="hero" class="hero">
         <div class="hero-content">
-            <div class="profile-content" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px; margin-top: 80px; padding: 0 15px;">
-                <!-- Profile Image -->
-                <div class="profile-image animate__animated animate__zoomIn" style="flex: 1; text-align: center; max-width: 250px; margin: 0 auto;">
-                    <img src="me.jpg" alt="Shashank Hegde" style="width: 100%; border-radius: 50%; border: 3px solid var(--accent-color); box-shadow: 0 0 20px var(--accent-color);" />
-                </div>
-
-                <!-- Info -->
-                <div class="profile-info" style="flex: 2; min-width: 250px; text-align: center; padding: 0 15px;">
-                    <h1 class="animate__animated animate__fadeInDown">Shashank Vinay Hegde</h1>
-                    <p class="tagline animate__animated animate__fadeInUp animate__delay-1s">Software Developer | Innovator</p>
-                    <p class="bio animate__animated animate__fadeInUp animate__delay-2s">
-                        A passionate developer skilled in web development, AI, and software engineering.
-                        I love building creative solutions and tackling complex challenges.
+            <h1 class="animate__animated animate__fadeInDown">Profile</h1>
+            <div class="profile-container">
+                <img src="profile-pic.jpg" alt="Shashank Vinay Hegde" class="profile-image" />
+                <div class="profile-text">
+                    <h2 class="animate__animated animate__fadeInUp">SHASHANK VINAY HEGDE</h2>
+                    <p>Software Developer | Innovator</p>
+                    <p class="tagline animate__animated animate__fadeInUp animate__delay-1s">
+                        A passionate developer skilled in web development, AI, and software engineering. I love building creative solutions and tackling complex challenges.
                     </p>
-                    <div class="social-links animate__animated animate__fadeInUp animate__delay-3s" style="margin-top: 20px; justify-content: center;">
-                        <a href="https://github.com/hegdeshashank100" class="btn" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/in/shashank-hegde-06a53531b" class="btn" target="_blank">LinkedIn</a>
-                        <a href="#" class="btn" onclick="openEmail(event)">Email</a>
+                    <div class="social-links">
+                        <a href="https://github.com/hegdeshashank100" class="social-card">GitHub</a>
+                        <a href="https://linkedin.com/in/shashank-hegde" class="social-card">LinkedIn</a>
+                        <a href="mailto:shashank@example.com" class="social-card">Email</a>
                     </div>
+                    <p class="scroll-text animate__animated animate__fadeInUp animate__delay-2s">Scroll to Discover</p>
                 </div>
             </div>
-
-            <p class="scroll-text animate__animated animate__fadeInUp animate__delay-4s">Scroll to Discover</p>
             <div class="orb" onclick="toggleOrb()"></div>
-            <div class="scroll-progress"></div>
         </div>
     </section>
 
@@ -60,17 +55,11 @@
         <p>© 2025 Shashank Hegde. All Rights Reserved.</p>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Theme Toggle -->
     <button id="theme-toggle" class="theme-toggle">🌓</button>
+
+    <!-- Scripts -->
     <script src="particles.js"></script>
     <script src="scripts.js"></script>
-
-    <!-- Inline helper for email -->
-    <script>
-        function openEmail(e) {
-            e.preventDefault();
-            window.location.href = "mailto:hegdeshashank100@gmail.com";
-        }
-    </script>
 </body>
 </html>
