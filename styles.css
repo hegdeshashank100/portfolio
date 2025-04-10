@@ -46,7 +46,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px; /* Added padding for mobile */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,6 +115,7 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
+    padding: 0 15px; /* Added padding for mobile */
 }
 
 .hero-content h1 {
@@ -197,12 +198,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
+    padding: 0 15px; /* Added padding for mobile */
 }
 
 .col {
     flex: 1;
-    min-width: 300px;
+    min-width: 250px;
     max-width: 350px;
 }
 
@@ -217,6 +219,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     transform-style: preserve-3d;
     perspective: 1000px;
+    margin-bottom: 20px; /* Added for better spacing on mobile */
 }
 
 .card:hover {
@@ -253,6 +256,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding: 0 15px; /* Added padding for mobile */
 }
 
 .contact-form input,
@@ -288,6 +292,9 @@ body {
     font-size: 1.2rem;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    width: 100%; /* Full width on mobile */
+    max-width: 200px; /* Limit width on larger screens */
+    margin: 0 auto; /* Center the button */
 }
 
 .btn:hover {
@@ -351,15 +358,14 @@ body {
     transform: rotate(30deg) scale(1.1);
 }
 
-.particles-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    pointer-events: none;
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content h1 { font-size: 3rem; }
+    .tagline { font-size: 1.3rem; }
+    .panel-title { font-size: 2rem; }
+    .card { min-width: 200px; }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .menu-toggle { display: block; }
     .nav-links { display: none; }
@@ -368,9 +374,13 @@ body {
     .nav-links a { font-size: 1rem; }
     .hero-content h1 { font-size: 2.5rem; }
     .tagline { font-size: 1.2rem; }
-    .panel-title { font-size: 2rem; }
-    .card { margin-bottom: 20px; }
+    .panel-title { font-size: 1.8rem; }
+    .card { margin-bottom: 15px; }
     .section-panel { padding: 20px; }
+    .profile-content { flex-direction: column; }
+    .profile-image, .profile-info { width: 100%; padding: 0; }
+    .social-links { flex-direction: column; gap: 10px; }
+    .btn { max-width: 100%; }
 }
 
 @media (max-width: 576px) {
@@ -378,4 +388,7 @@ body {
     .tagline { font-size: 1rem; }
     .btn { font-size: 1rem; padding: 10px 20px; }
     .row { flex-direction: column; }
+    .panel-text { font-size: 1rem; }
+    .card h3 { font-size: 1.2rem; }
+    .card-summary { font-size: 0.9rem; }
 }
