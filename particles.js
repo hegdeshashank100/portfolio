@@ -1,4 +1,3 @@
-// particles.js
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.createElement('canvas');
     canvas.classList.add('particles-canvas');
@@ -6,11 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const ctx = canvas.getContext('2d');
 
     let particles = [];
-    const num = 80;
+    const num = 50; // Reduced number of particles for mobile performance
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.height = window.innerHeight * 0.8; // Limit canvas height to 80% of viewport
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.zIndex = '0';
     }
 
     window.addEventListener('resize', resizeCanvas);
