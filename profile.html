@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Profile - Shashank Hegde</title>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="navbar-brand">PROFILE</a>
+                <button class="menu-toggle">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="profile-content" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin-top: 50px;">
+                <!-- Profile Image -->
+                <div class="profile-image animate__animated animate__zoomIn" style="flex: 1; text-align: center; max-width: 300px;">
+                    <img src="me.jpg" alt="Shashank Hegde" style="width: 100%; border-radius: 50%; border: 3px solid var(--accent-color); box-shadow: 0 0 20px var(--accent-color);" />
+                </div>
+
+                <!-- Info -->
+                <div class="profile-info" style="flex: 2; min-width: 300px;">
+                    <h1 class="animate__animated animate__fadeInDown">Shashank Vinay Hegde</h1>
+                    <p class="tagline animate__animated animate__fadeInUp animate__delay-1s">Software Developer | Innovator</p>
+                    <p class="bio animate__animated animate__fadeInUp animate__delay-2s">
+                        A passionate developer skilled in web development, AI, and software engineering.
+                        I love building creative solutions and tackling complex challenges.
+                    </p>
+                    <div class="social-links animate__animated animate__fadeInUp animate__delay-3s" style="margin-top: 20px;">
+                        <a href="https://github.com/hegdeshashank100" class="btn" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/shashank-hegde-06a53531b" class="btn" target="_blank">LinkedIn</a>
+                        <a href="#" class="btn" onclick="openEmail(event)">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="scroll-text animate__animated animate__fadeInUp animate__delay-4s">Scroll to Discover</p>
+            <div class="orb" onclick="toggleOrb()"></div>
+            <div class="scroll-progress"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Shashank Hegde. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <button id="theme-toggle" class="theme-toggle">🌓</button>
+    <script src="particles.js"></script>
+    <script src="scripts.js"></script>
+
+    <!-- Inline helper for email -->
+    <script>
+        function openEmail(e) {
+            e.preventDefault();
+            window.location.href = "mailto:hegdeshashank100@gmail.com";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+.navbar {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    color: #007bff !important;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-size: 16px;
+    padding: 10px !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff !important;
+}
+
+/* Profile Section */
+.profile-section {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #121212, #1f1f1f);
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    border-radius: 15px;
+    background-color: #1f1f1f;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+    transition: all 0.8s ease-out;
+}
+
+.profile-container.visible {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.profile-image {
+    width: 40%;
+    padding-right: 30px;
+    position: relative;
+}
+
+.profile-image img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease;
+}
+
+.profile-image:hover img {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.profile-info {
+    width: 55%;
+    padding-left: 30px;
+}
+
+.profile-info h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.profile-info .tagline {
+    font-size: 20px;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.profile-info .bio {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    padding: 10px 15px;
+    background-color: #007bff;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.animate-on-hover:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px) rotate(10deg);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.7);
+}
+
+/* Crazy Custom Animations */
+@keyframes crazySpin {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.2); }
+    50% { transform: rotate(180deg) scale(0.9); }
+    75% { transform: rotate(270deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(0, 123, 255, 1); }
+    100% { box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); }
+}
+
+/* Apply crazy animations on hover */
+.profile-info h1:hover {
+    animation: crazySpin 1s infinite linear;
+}
+
+.profile-container:hover {
+    animation: pulseGlow 1.5s infinite;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll Animation */
+.animate-on-scroll {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .profile-image {
+        width: 60%;
+        margin-bottom: 20px;
+        padding-right: 0;
+    }
+
+    .profile-info {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .profile-info h1 {
+        font-size: 28px;
+    }
+
+    .profile-info .tagline {
+        font-size: 18px;
+    }
+
+    .profile-info .bio {
+        font-size: 14px;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .social-link {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
