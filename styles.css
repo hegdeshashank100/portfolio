@@ -29,6 +29,7 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     transition: background 0.4s, color 0.4s;
+    margin-top: 60px; /* Offset for fixed navbar */
 }
 
 .navbar {
@@ -41,6 +42,7 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px var(--accent-color);
     transition: background 0.3s;
+    height: 60px; /* Fixed height for navbar */
 }
 
 .container {
@@ -89,7 +91,7 @@ body {
     top: 60px;
     left: 0;
     right: 0;
-    background: rgba(26, 0, 51, 0.9);
+    background: rgba(26, 0, 0, 0.9);
     padding: 20px;
     text-align: center;
 }
@@ -104,13 +106,13 @@ body {
 }
 
 .hero {
-    min-height: 100vh; /* Adjusted to ensure content fits */
+    min-height: calc(100vh - 60px); /* Adjusted for navbar height */
     background: linear-gradient(135deg, #800080, var(--bg-color));
     position: relative;
     overflow: hidden;
-    padding: 100px 0 50px; /* Added bottom padding to push content up */
+    padding: 80px 0 30px; /* Reduced padding to minimize gap */
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Align content to top */
     justify-content: center;
 }
 
@@ -138,13 +140,13 @@ body {
 
 .orb {
     position: absolute;
-    width: 150px; /* Reduced size for mobile */
+    width: 150px;
     height: 150px;
     background: var(--orb-gradient);
     border-radius: 50%;
     animation: pulse 6s infinite;
     filter: blur(10px);
-    top: 20%;
+    top: 10%; /* Adjusted to avoid overlapping content */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -166,7 +168,7 @@ body {
 
 .section-panel {
     margin: 80px 0;
-    padding: 40px;
+    padding: 40px 0 0; /* Removed bottom padding to avoid extra space, adjusted top padding */
     background: rgba(26, 0, 51, 0.8);
     border-radius: 15px;
     border: 1px solid var(--accent-color);
@@ -174,6 +176,7 @@ body {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s, transform 0.8s;
+    position: relative; /* Ensure proper stacking context */
 }
 
 .section-panel.visible {
@@ -182,21 +185,26 @@ body {
 }
 
 .panel-title {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reduced from 2.5rem to match h4 semantics */
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--text-color);
     text-shadow: 0 0 10px var(--accent-color);
+    padding: 0 15px; /* Match container padding */
+    position: absolute; /* Position absolutely within section-panel */
+    top: -40px; /* Move above the section */
+    left: 0;
+    width: 100%;
+    background: inherit; /* Inherit background to avoid content overlap */
 }
 
-.panel-text {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 20px;
-    text-align: center;
-    color: #ccc;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 15px 20px; /* Adjusted padding to accommodate the title */
+    position: relative; /* Ensure proper stacking with title */
 }
 
 .row {
@@ -322,17 +330,6 @@ body {
     margin-top: 20px;
 }
 
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5px;
-    background: var(--scroll-color);
-    transform-origin: 0 0;
-    transition: transform 0.1s;
-    z-index: 1001;
-}
-
 .footer {
     text-align: center;
     padding: 20px;
@@ -367,7 +364,7 @@ body {
 @media (max-width: 1024px) {
     .hero-content h1 { font-size: 3rem; }
     .tagline { font-size: 1.3rem; }
-    .panel-title { font-size: 2rem; }
+    .panel-title { font-size: 1.8rem; }
     .card { min-width: 200px; }
     .orb { width: 120px; height: 120px; }
 }
@@ -380,11 +377,13 @@ body {
     .nav-links a { font-size: 1rem; }
     .hero-content h1 { font-size: 2.5rem; }
     .tagline { font-size: 1.2rem; }
-    .panel-title { font-size: 1.8rem; }
+    .panel-title { font-size: 1.6rem; }
     .card { margin-bottom: 15px; }
-    .section-panel { padding: 20px; }
-    .hero { padding: 80px 0 30px; } /* Reduced padding for mobile */
-    .orb { top: 15%; width: 100px; height: 100px; }
+    .section-panel { margin: 60px 0; padding: 30px 0 0; }
+    .container { padding: 30px 15px 15px; }
+    .panel-title { top: -30px; }
+    .hero { padding: 60px 0 20px; }
+    .orb { top: 10%; width: 100px; height: 100px; }
 }
 
 @media (max-width: 576px) {
@@ -395,5 +394,9 @@ body {
     .panel-text { font-size: 1rem; }
     .card h3 { font-size: 1.2rem; }
     .card-summary { font-size: 0.9rem; }
-    .hero { min-height: 80vh; } /* Reduced min-height for mobile */
+    .panel-title { font-size: 1.4rem; }
+    .section-panel { margin: 40px 0; padding: 20px 0 0; }
+    .container { padding: 20px 15px 10px; }
+    .panel-title { top: -20px; }
+    .hero { min-height: 70vh; }
 }
