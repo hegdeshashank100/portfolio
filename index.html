@@ -1,146 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shashank Hegde - Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shashank Hegde - Portfolio</title>
 
-  <!-- Fonts & Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-  <link rel="stylesheet" href="styles.css"/>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts & Animate CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="container nav-container">
-        <a href="#" class="navbar-brand">Portfolio</a>
-        <button class="menu-toggle">☰</button>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certificates">Certificates</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="profile.html">Profile</a></li> <!-- ✅ This now works -->
-        </ul>
-      </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SHASHANK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <!-- Hero -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1 class="animate__animated animate__fadeInDown">Shashank Hegde</h1>
-      <p class="tagline animate__animated animate__fadeInUp animate__delay-1s">
-        Innovative Developer | Code Explorer
-      </p>
-      <p class="scroll-text animate__animated animate__fadeInUp animate__delay-2s">Scroll to Discover</p>
-      <div class="orb" onclick="toggleOrb()"></div>
-      <div class="scroll-progress"></div>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex flex-column justify-content-center align-items-center text-center min-vh-100">
+        <div class="container">
+            <h1 class="display-4 animate__animated animate__fadeInDown">Shashank Hegde</h1>
+            <p class="lead animate__animated animate__fadeInUp">Innovative Developer | Code Explorer</p>
+            <p class="scroll-text animate__animated animate__fadeInUp animate__delay-2s">Scroll to Discover</p>
+            <div class="orb mt-3" onclick="toggleOrb()"></div>
+        </div>
+    </section>
 
-  <!-- About -->
-  <section id="about" class="section-panel">
-    <div class="container">
-      <h2 class="panel-title">About Me</h2>
-      <p class="panel-text">
-        I am a passionate developer with expertise in web technologies like HTML, CSS, PHP, Java, Python, and C.
-        My projects range from a mental health support platform to a skin disease detection tool, showcasing my ability to solve real-world problems with innovative solutions.
-        I thrive on continuous learning and pushing the boundaries of technology.
-      </p>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="py-5 text-center bg-light">
+        <div class="container">
+            <h2 class="mb-4">About Me</h2>
+            <p>
+                I am a passionate developer with expertise in web technologies like HTML, CSS, PHP, Java, Python, and C.
+                My projects range from a mental health support platform to a skin disease detection tool, showcasing my ability to solve real-world problems with innovative solutions.
+                I thrive on continuous learning and pushing the boundaries of technology.
+            </p>
+        </div>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects" class="section-panel">
-    <div class="container">
-      <h2 class="panel-title">My Projects</h2>
-      <div class="row">
-        <!-- Project Cards -->
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>YouTube Video Downloader</h3>
-          <p class="card-summary">A tool to download YouTube videos.</p>
-          <div class="card-details">Customizable formats and quality. <a href="https://github.com/hegdeshashank100/YouTube-video-downloader" target="_blank">View</a></div>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 text-center bg-dark text-white">
+        <div class="container">
+            <h2 class="mb-4">My Projects</h2>
+            <div class="row g-4">
+                <!-- Repeat for each project -->
+                <div class="col-md-4">
+                    <div class="card h-100" onclick="toggleCardDetails(this)">
+                        <div class="card-body">
+                            <h5 class="card-title">YouTube Video Downloader</h5>
+                            <p class="card-text">A tool to download YouTube videos.</p>
+                            <div class="card-details">Customizable formats and quality. <a href="https://github.com/hegdeshashank100/YouTube-video-downloader" target="_blank">View</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more cards similarly -->
+                <!-- Smart Education -->
+                <div class="col-md-4">
+                    <div class="card h-100" onclick="toggleCardDetails(this)">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Education</h5>
+                            <p class="card-text">AI-powered learning platform.</p>
+                            <div class="card-details">Interactive and personalized learning. <a href="https://github.com/hegdeshashank100/QC" target="_blank">View</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skin Disease Detector -->
+                <div class="col-md-4">
+                    <div class="card h-100" onclick="toggleCardDetails(this)">
+                        <div class="card-body">
+                            <h5 class="card-title">Skin Disease Detector</h5>
+                            <p class="card-text">ML-based skin disease tool.</p>
+                            <div class="card-details">Image analysis for detection. <a href="https://github.com/hegdeshashank100/disease-detector" target="_blank">View</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more if needed -->
+            </div>
         </div>
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>Smart Education</h3>
-          <p class="card-summary">An AI-powered learning platform.</p>
-          <div class="card-details">Interactive and personalized learning. <a href="https://github.com/hegdeshashank100/QC" target="_blank">View</a></div>
-        </div>
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>Skin Disease Detector</h3>
-          <p class="card-summary">ML-based skin disease tool.</p>
-          <div class="card-details">Image analysis for detection. <a href="https://github.com/hegdeshashank100/disease-detector" target="_blank">View</a></div>
-        </div>
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>Library Book Management</h3>
-          <p class="card-summary">Python library management app.</p>
-          <div class="card-details">Efficient book and loan tracking. <a href="https://github.com/hegdeshashank100/library-book-management" target="_blank">View</a></div>
-        </div>
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>Smartphones Under 15K</h3>
-          <p class="card-summary">SPA for smartphones under ₹15K.</p>
-          <div class="card-details">Specs and reviews included. <a href="https://github.com/hegdeshashank100/smartphone-under-15k" target="_blank">View</a></div>
-        </div>
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>More Projects</h3>
-          <p class="card-summary">Explore more on GitHub.</p>
-          <div class="card-details">Various innovative solutions. <a href="https://github.com/hegdeshashank100" target="_blank">View All</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Certificates -->
-  <section id="certificates" class="section-panel">
-    <div class="container">
-      <h2 class="panel-title">My Certificates</h2>
-      <div class="row">
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>Java Basic</h3>
-          <p class="card-summary">Certified by HackerRank.</p>
-          <div class="card-details">Core Java concepts. <a href="https://www.hackerrank.com/certificates/iframe/cb4c930f5915" target="_blank">View</a></div>
+    <!-- Certificates -->
+    <section id="certificates" class="py-5 text-center bg-light">
+        <div class="container">
+            <h2 class="mb-4">My Certificates</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100" onclick="toggleCardDetails(this)">
+                        <div class="card-body">
+                            <h5 class="card-title">Java Basic</h5>
+                            <p class="card-text">Certified by HackerRank.</p>
+                            <div class="card-details">Core Java concepts. <a href="https://www.hackerrank.com/certificates/iframe/cb4c930f5915" target="_blank">View</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100" onclick="toggleCardDetails(this)">
+                        <div class="card-body">
+                            <h5 class="card-title">Python Course</h5>
+                            <p class="card-text">Certified by Scalar Topics.</p>
+                            <div class="card-details">Python basics. <a href="https://drive.google.com/file/d/15It_DQwgvi9nbre0IzCJ__gy1IS3XV5q/view?usp=sharing" target="_blank">View</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100" onclick="toggleCardDetails(this)">
+                        <div class="card-body">
+                            <h5 class="card-title">C for Beginners</h5>
+                            <p class="card-text">Certified by Great Learning.</p>
+                            <div class="card-details">C programming basics. <a href="https://www.mygreatlearning.com/certificate/TZTJJVUI" target="_blank">View</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>Python Course</h3>
-          <p class="card-summary">Certified by Scalar Topics.</p>
-          <div class="card-details">Python basics. <a href="https://drive.google.com/file/d/15It_DQwgvi9nbre0IzCJ__gy1IS3XV5q/view?usp=sharing" target="_blank">View</a></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Contact Me</h2>
+            <form class="row g-3 justify-content-center" onsubmit="handleSubmit(event)">
+                <div class="col-md-5">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-5">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="col-10">
+                    <textarea class="form-control" placeholder="Your Message" required rows="4"></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-light">Send</button>
+                    <p id="form-message" class="mt-3"></p>
+                </div>
+            </form>
         </div>
-        <div class="card" onclick="toggleCardDetails(this)">
-          <h3>C for Beginners</h3>
-          <p class="card-summary">Certified by Great Learning.</p>
-          <div class="card-details">C programming basics. <a href="https://www.mygreatlearning.com/certificate/TZTJJVUI" target="_blank">View</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section-panel">
-    <div class="container">
-      <h2 class="panel-title">Contact Me</h2>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send</button>
-        <p id="form-message"></p>
-      </form>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-light">
+        <p>© 2025 Shashank Hegde. All Rights Reserved.</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Shashank Hegde. All Rights Reserved.</p>
-  </footer>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle">🌓</button>
 
-  <!-- Theme Toggle -->
-  <button id="theme-toggle" class="theme-toggle">🌓</button>
-
-  <!-- Scripts -->
-  <script src="particles.js"></script>
-  <script src="scripts.js"></script>
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
