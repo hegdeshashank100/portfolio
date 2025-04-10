@@ -52,6 +52,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center; /* Center-align content on larger screens */
 }
 
 .navbar-brand {
@@ -60,16 +61,19 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-decoration: none;
+    flex-grow: 0; /* Prevent stretching */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center navigation links */
+    flex-grow: 1; /* Allow links to take available space */
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin: 0 15px; /* Even spacing between links */
 }
 
 .nav-links a {
@@ -110,9 +114,9 @@ body {
     background: linear-gradient(135deg, #800080, var(--bg-color));
     position: relative;
     overflow: hidden;
-    padding: 80px 0 30px; /* Reduced padding to minimize gap */
+    padding: 80px 0 30px;
     display: flex;
-    align-items: flex-start; /* Align content to top */
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -146,7 +150,7 @@ body {
     border-radius: 50%;
     animation: pulse 6s infinite;
     filter: blur(10px);
-    top: 10%; /* Adjusted to avoid overlapping content */
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -168,7 +172,7 @@ body {
 
 .section-panel {
     margin: 80px 0;
-    padding: 40px 0 0; /* Removed bottom padding to avoid extra space, adjusted top padding */
+    padding: 40px 0 0;
     background: rgba(26, 0, 51, 0.8);
     border-radius: 15px;
     border: 1px solid var(--accent-color);
@@ -176,7 +180,7 @@ body {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s, transform 0.8s;
-    position: relative; /* Ensure proper stacking context */
+    position: relative;
 }
 
 .section-panel.visible {
@@ -185,32 +189,33 @@ body {
 }
 
 .panel-title {
-    font-size: 2rem; /* Reduced from 2.5rem to match h4 semantics */
+    font-size: 2rem;
     text-align: center;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: var(--text-color);
     text-shadow: 0 0 10px var(--accent-color);
-    padding: 0 15px; /* Match container padding */
-    position: absolute; /* Position absolutely within section-panel */
-    top: -40px; /* Move above the section */
+    padding: 0 15px;
+    position: absolute;
+    top: -40px;
     left: 0;
     width: 100%;
-    background: inherit; /* Inherit background to avoid content overlap */
+    background: inherit;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 15px 20px; /* Adjusted padding to accommodate the title */
-    position: relative; /* Ensure proper stacking with title */
+    padding: 40px 15px 20px;
+    position: relative;
+    text-align: center; /* Center-align container content on larger screens */
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Center-align cards on larger screens */
     gap: 20px;
     padding: 0 15px;
 }
@@ -233,6 +238,8 @@ body {
     transform-style: preserve-3d;
     perspective: 1000px;
     margin-bottom: 20px;
+    width: 100%; /* Ensure cards take full width on mobile */
+    max-width: 300px; /* Limit card width on larger screens */
 }
 
 .card:hover {
@@ -270,6 +277,7 @@ body {
     flex-direction: column;
     gap: 15px;
     padding: 0 15px;
+    text-align: center; /* Center-align form fields */
 }
 
 .contact-form input,
@@ -281,6 +289,9 @@ body {
     color: var(--text-color);
     font-family: 'Orbitron', sans-serif;
     transition: border-color 0.3s;
+    width: 100%; /* Full width on mobile */
+    max-width: 400px; /* Limit width on larger screens */
+    margin: 0 auto; /* Center the input fields */
 }
 
 .contact-form input:focus,
@@ -365,8 +376,9 @@ body {
     .hero-content h1 { font-size: 3rem; }
     .tagline { font-size: 1.3rem; }
     .panel-title { font-size: 1.8rem; }
-    .card { min-width: 200px; }
+    .card { min-width: 200px; max-width: 280px; }
     .orb { width: 120px; height: 120px; }
+    .nav-links li { margin: 0 10px; }
 }
 
 @media (max-width: 768px) {
@@ -378,12 +390,13 @@ body {
     .hero-content h1 { font-size: 2.5rem; }
     .tagline { font-size: 1.2rem; }
     .panel-title { font-size: 1.6rem; }
-    .card { margin-bottom: 15px; }
+    .card { margin-bottom: 15px; max-width: 100%; }
     .section-panel { margin: 60px 0; padding: 30px 0 0; }
     .container { padding: 30px 15px 15px; }
     .panel-title { top: -30px; }
     .hero { padding: 60px 0 20px; }
     .orb { top: 10%; width: 100px; height: 100px; }
+    .contact-form input, .contact-form textarea { max-width: 100%; }
 }
 
 @media (max-width: 576px) {
@@ -399,4 +412,6 @@ body {
     .container { padding: 20px 15px 10px; }
     .panel-title { top: -20px; }
     .hero { min-height: 70vh; }
+    .card { max-width: 100%; }
+    .contact-form input, .contact-form textarea { max-width: 100%; }
 }
