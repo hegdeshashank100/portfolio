@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId.startsWith('http') || !targetId.startsWith('#')) {
-                window.location.href = targetId; // Redirect for external URLs or files like profile.html
+                window.location.href = targetId;
             } else {
                 document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
                 navLinks.classList.remove('active');
