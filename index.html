@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashank Vinay Hegde - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="floating-particles"></div>
+        <canvas id="matrix-canvas"></canvas>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-glow"></div>
+                <span class="logo-text">SVH</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="profile.html" class="nav-link profile-btn">Profile</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">SHASHANK</span>
+                    <span class="title-line">VINAY HEGDE</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="typing-text" id="typing-text">Web & Application Developer</span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    I'm a Computer Science and Design student with a passion for building innovative, user-focused solutions. My expertise spans AI, web development, and software design. I enjoy working with Python, JavaScript, and frameworks like TensorFlow and React.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cube">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face back"></div>
+                    <div class="cube-face right"></div>
+                    <div class="cube-face left"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face bottom"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="about-timeline">
+                <div class="about-item">
+                    <div class="about-content">
+                        <div class="profile-section">
+                            <div class="image-glow"></div>
+                            <img src="me.jpg" alt="Profile Picture" class="profile-img">
+                        </div>
+                        <h3>Who I Am</h3>
+                        <p>I specialize in creating AI-driven projects such as mental health support platforms, agricultural solutions, and blockchain applications, always striving to make a real-world impact through technology.</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="20">0</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="6">0</span>
+                                <span class="stat-label">Certificates</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="3">0</span>
+                                <span class="stat-label">Years Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="skills-timeline">
+                <div class="skill-category-item">
+                    <div class="skill-category-content">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-items">
+                            <div class="skill-tech">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fab fa-java"></i>
+                                <span>Java</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category-item">
+                    <div class="skill-category-content">
+                        <h3>Frameworks & Libraries</h3>
+                        <div class="skill-items">
+                            <div class="skill-tech">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fas fa-brain"></i>
+                                <span>TensorFlow</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fas fa-flask"></i>
+                                <span>Flask</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category-item">
+                    <div class="skill-category-content">
+                        <h3>Tools & Technologies</h3>
+                        <div class="skill-items">
+                            <div class="skill-tech">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fab fa-docker"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="skill-tech">
+                                <i class="fab fa-aws"></i>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>Bachelor of Technology</h3>
+                        <div class="institution">PES Institute of Technology & Management</div>
+                        <div class="duration">2023 - 2027</div>
+                        <p>Specializing in Computer Science and Design with focus on AI, web development, and software engineering.</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>Pre-University Course</h3>
+                        <div class="institution">MES PU College Sirsi</div>
+                        <div class="duration">2020 - 2023</div>
+                        <p>Completed pre-university education with science stream, building foundation for engineering studies.</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-content">
+                        <h3>High School</h3>
+                        <div class="institution">Jagadamba High School Sarakuli</div>
+                        <div class="duration">2018 - 2020</div>
+                        <p>Completed secondary education with excellent academic performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="projects-timeline">
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>MindCare AI</h3>
+                        <p>AI-powered web platform for 24/7 mental health support with emotion detection and personalized recommendations.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>React</span>
+                            <span>Flask</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>EduConnect</h3>
+                        <p>Centralized platform for academic resources and career guidance for students.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>React</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>FarmAssist AI</h3>
+                        <p>AI-based pest alerts, weather insights, and crop management system for farmers.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>Flask</span>
+                            <span>SQLite</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>Voice Assistant</h3>
+                        <p>Python-based offline voice assistant for file and application control.</p>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>Speech Recognition</span>
+                            <span>NLP</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>HealthChain</h3>
+                        <p>Blockchain-based secure health record system for patient data management.</p>
+                        <div class="project-tech">
+                            <span>Blockchain</span>
+                            <span>Solidity</span>
+                            <span>Web3.js</span>
+                            <span>React</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project</a>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-content">
+                        <h3>Library Management System</h3>
+                        <p>Library management system for book borrowing and inventory management.</p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>MySQL</span>
+                            <span>Swing</span>
+                        </div>
+                        <a href="#" class="project-btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificates">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certificates</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="certificates-timeline">
+                <div class="certificate-item">
+                    <div class="certificate-content">
+                        <div class="certificate-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Python Programming</h3>
+                        <p class="cert-provider">HackerRank - November 2024</p>
+                        <a href="#" class="cert-link">View Certificate</a>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-content">
+                        <div class="certificate-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p class="cert-provider">Scaler - May 2024</p>
+                        <a href="#" class="cert-link">View Certificate</a>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-content">
+                        <div class="certificate-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Machine Learning</h3>
+                        <p class="cert-provider">Udemy - April 2025</p>
+                        <a href="#" class="cert-link">View Certificate</a>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-content">
+                        <div class="certificate-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Data Science</h3>
+                        <p class="cert-provider">Great Learning - April 2024</p>
+                        <a href="#" class="cert-link">View Certificate</a>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-content">
+                        <div class="certificate-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p class="cert-provider">Swayam - January 2025</p>
+                        <a href="#" class="cert-link">View Certificate</a>
+                    </div>
+                </div>
+                <div class="certificate-item">
+                    <div class="certificate-content">
+                        <div class="certificate-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Computing</h3>
+                        <p class="cert-provider">InfySpringboard - April 2025</p>
+                        <a href="#" class="cert-link">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 7204150229</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>hegdeshashank100@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Nerlahadda, Po: Mattigar, Sirsi – 581450</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/shashank-hegde-06a53531b/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/hegdeshashank100"><i class="fab fa-github"></i></a>
+                        <a href="mailto:hegdeshashank1000@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+
+                        
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Shashank Vinay Hegde. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Project Details -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

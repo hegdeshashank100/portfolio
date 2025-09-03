@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashank Vinay Hegde - Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="floating-particles"></div>
+        <canvas id="matrix-canvas"></canvas>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-glow"></div>
+                <span class="logo-text">SVH</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Back to Portfolio</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section" style="padding-top: 120px; min-height: 100vh;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Profile</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="profile-card" style="background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(20px); border-radius: 20px; padding: 3rem; max-width: 800px; margin: 0 auto; text-align: center;">
+                <div class="profile-image-container" style="margin-bottom: 2rem;">
+                    <div class="image-glow"></div>
+                    <img src="me.jpg" alt="Shashank Vinay Hegde" class="profile-img" style="width: 250px; height: 250px;">
+                </div>
+                
+                <h1 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem; font-family: 'Orbitron', monospace;">Shashank Vinay Hegde</h1>
+                <h2 style="color: var(--secondary-color); font-size: 1.5rem; margin-bottom: 2rem;">Web & Application Developer</h2>
+                
+                <div class="profile-description" style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem; text-align: left;">
+                    <p>Computer Science and Design student with expertise in AI, web development, and software design. Skilled in Python, JavaScript, and TensorFlow, with experience in building AI-driven projects like mental health platforms and skin disease detectors. Passionate about delivering innovative, user-focused solutions.</p>
+                </div>
+                
+                <div class="contact-details" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3rem;">
+                    <div class="contact-detail" style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                        <i class="fas fa-phone" style="color: var(--secondary-color); font-size: 1.2rem;"></i>
+                        <span style="color: var(--text-primary);">+91 7204150229</span>
+                    </div>
+                    <div class="contact-detail" style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                        <i class="fas fa-envelope" style="color: var(--secondary-color); font-size: 1.2rem;"></i>
+                        <span style="color: var(--text-primary);">hegdeshashank100@gmail.com</span>
+                    </div>
+                    <div class="contact-detail" style="display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 10px;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--secondary-color); font-size: 1.2rem;"></i>
+                        <span style="color: var(--text-primary);">Nerlahadda, PO: Mattigar, Sirsi (581450), Karnataka</span>
+                    </div>
+                </div>
+                
+                <div class="action-buttons" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+    
+                    <a href="index.html#contact" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
